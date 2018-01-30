@@ -25,8 +25,8 @@ class User(db.Model):
     def __repr__(self):
         """show info about rating"""
 
-        return "<user_id= {} email= {} password= {}>".format(self.user_id,
-        self.email, self.password)
+        return "<User user_id= {} email= {}>".format(self.user_id,
+        self.email)
 
 
 # Put your Movie and Rating model classes here.
@@ -35,15 +35,15 @@ class Movie(db.Model):
 
     __tablename__= "movies"
 
-    movie_id = db.Column(db.Integer,autoincrement= True, primary_key=True)
-    title = db.Column(db.String(100),nullable=False)
+    movie_id = db.Column(db.Integer, autoincrement= True, primary_key=True)
+    title = db.Column(db.String(80), nullable=False)
     released_at = db.Column(db.DateTime, nullable=False)
-    imdb_url = db.Column(db.String(170), nullable=False)
+    imdb_url = db.Column(db.String(150), nullable=False)
 
     def __repr__(self):
         """show info about rating"""
 
-        return "<movie_id= {} title= {} released_at= {}>".format(self.title,
+        return "<Movie movie_id= {} title= {} released_at= {}>".format(self.title,
         self.movie_id, self.released_at)
 
 
@@ -60,7 +60,7 @@ class Rating(db.Model):
     def __repr__(self):
         """show info about rating"""
 
-        return "<Rating_id= {} movie_id= {} user_id= {} score= {}>".format(self.rating_id,
+        return "<Rating rating_id= {} movie_id= {} user_id= {} score= {}>".format(self.rating_id,
         self.movie_id, self.user_id, self.score)
 
 
